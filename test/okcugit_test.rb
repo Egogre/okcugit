@@ -14,11 +14,21 @@ class OkcugitFinderTest < Minitest::Test
     assert ok
   end
   # ruby ./okcugit turingschool/challenges
+  
   def test_it_goes_to_designated_page
+    skip
     expected = "<!DOCTYPE html>"
-
     assert_equal expected, ok.get_page_source.split('\n')[0]
   end
+
+  def test_it_can_open_a_url
+    expected = 123
+    assert_equal expected, ok.open_url
+  end
+
+
+
+
   #go to github.com/ARGV[0]
   #find the SSH copy it
   #run git clone #{SSH}
